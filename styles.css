@@ -1,0 +1,58 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  .menu {
+    display: flex;
+    list-style: none;
+  }
+  
+  .menu li {
+    margin: 0 10px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .menu a:hover {
+    color: #ff9900;
+  }
+  
+  /* Responsive menu (burger) */
+  .burger-menu {
+    display: none;
+    font-size: 24px;
+  }
+  
+  /* Hero section */
+  #hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f4f4f4;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
