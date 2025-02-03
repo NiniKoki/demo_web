@@ -1,59 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Clothing Shop</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flavourish - Final Project Example</title>
+
+  <!-- Custom Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Ionicons (for icons) -->
+  <script type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
+  </script>
+  <script nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js">
+  </script>
 </head>
-<body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <div class="logo">ClotheShop</div>
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="burger-menu" id="burgerMenu">☰</div>
-    </nav>
+<body id="top">
+
+  <!-- =========================
+       COOKIE / CONSENT BANNER
+  ========================== -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>
+      We use cookies to improve your experience. By clicking “Accept”, you agree
+      to our <a href="#">Cookie Policy</a>.
+    </p>
+    <button id="acceptCookiesBtn" class="btn-cookie">Accept</button>
+  </div>
+
+  <!-- =========================
+       PAGE PRELOADER
+  ========================== -->
+  <div class="page-loader" data-page-loader>
+    <div class="loader-circle"></div>
+    <p class="loader-text">Flavourish</p>
+  </div>
+
+  <!-- =========================
+       TOP BAR
+  ========================== -->
+  <div class="site-topbar">
+    <div class="container topbar-wrapper">
+      <address class="topbar-item">
+        <ion-icon name="location-outline"></ion-icon>
+        <span class="text-sm">123 Foodie St, Tastyville</span>
+      </address>
+      <div class="separator"></div>
+      <div class="topbar-item">
+        <ion-icon name="call-outline"></ion-icon>
+        <span class="text-sm">+1 234 567 890</span>
+      </div>
+      <div class="separator"></div>
+      <div class="topbar-item">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span class="text-sm">hello@flavourish.com</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header class="site-header" data-site-header>
+    <div class="container header-container">
+      <a href="#top" class="logo">Flavourish</a>
+
+      <!-- Desktop Nav -->
+      <nav class="site-navbar">
+        <ul class="navbar-list">
+          <li><a href="#hero" class="navbar-link hover-underline">Home</a></li>
+          <li><a href="#about" class="navbar-link hover-underline">About</a></li>
+          <li><a href="#menu" class="navbar-link hover-underline">Menu</a></li>
+          <li><a href="#team" class="navbar-link hover-underline">Team</a></li>
+          <li><a href="#register" class="navbar-link hover-underline">Register</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA button (Desktop) -->
+      <a href="#register" class="button button-secondary cta-button">
+        <span class="text text-1">Sign Up</span>
+        <span class="text text-2" aria-hidden="true">Sign Up</span>
+      </a>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <h1>Welcome to ClotheShop</h1>
-    <p>Your one-stop shop for the latest trends in clothing.</p>
-    <a href="shop.html" class="btn">Shop Now</a>
+  <!-- Burger Menu Button (visible on mobile) -->
+  <button class="nav-open-btn" data-nav-toggle aria-label="open menu">
+    <span class="line line-1"></span>
+    <span class="line line-2"></span>
+    <span class="line line-3"></span>
+  </button>
+
+  <!-- Mobile Navbar + Overlay -->
+  <div class="mobile-navbar" data-navigation>
+    <button class="close-btn" data-nav-toggle aria-label="close menu">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <ul class="mobile-nav-list">
+      <li><a href="#hero" class="mobile-nav-link hover-underline">Home</a></li>
+      <li><a href="#about" class="mobile-nav-link hover-underline">About</a></li>
+      <li><a href="#menu" class="mobile-nav-link hover-underline">Menu</a></li>
+      <li><a href="#team" class="mobile-nav-link hover-underline">Team</a></li>
+      <li><a href="#register" class="mobile-nav-link hover-underline">Register</a></li>
+    </ul>
+  </div>
+  <div class="overlay" data-page-overlay></div>
+
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
+  <section class="banner" id="hero">
+    <ul class="banner-slider" data-banner-slider>
+      <!-- Slide 1 -->
+      <li class="banner-slide active" data-banner-slider-item>
+        <div class="banner-bg">
+          <img src="photos/image-10.jpg" alt="image-10" class="img-cover"/>
+        </div>
+        <p class="section-minor-title fade-up">Welcome to Flavourish</p>
+        <h1 class="showcase-1 fade-up">Experience Culinary Bliss</h1>
+        <p class="text-md fade-up">
+          Enjoy mouthwatering dishes crafted by top chefs.
+        </p>
+        <a href="#menu" class="button button-primary fade-up">
+          <span class="text text-1">Our Menu</span>
+          <span class="text text-2" aria-hidden="true">Our Menu</span>
+        </a>
+      </li>
+
+      <!-- Slide 2 -->
+      <li class="banner-slide" data-banner-slider-item>
+        <div class="banner-bg">
+          <img src="photos/image-13.jpg" alt="image-13" class="img-cover"/>
+        </div>
+        <p class="section-minor-title fade-up">Fresh & Tasty</p>
+        <h1 class="showcase-1 fade-up">Where Flavors Come Alive</h1>
+        <p class="text-md fade-up">
+          Taste the difference with our seasonal specialties.
+        </p>
+        <a href="#about" class="button button-primary fade-up">
+          <span class="text text-1">Learn More</span>
+          <span class="text text-2" aria-hidden="true">Learn More</span>
+        </a>
+      </li>
+
+      <!-- Slide 3 -->
+      <li class="banner-slide" data-banner-slider-item>
+        <div class="banner-bg">
+          <img src="photos/image-14.jpg" alt="image-14" class="img-cover"/>
+        </div>
+        <p class="section-minor-title fade-up">Exquisite Dining</p>
+        <h1 class="showcase-1 fade-up">A Symphony of Tastes</h1>
+        <p class="text-md fade-up">
+          Savor each bite in a vibrant, inviting atmosphere.
+        </p>
+        <a href="#team" class="button button-primary fade-up">
+          <span class="text text-1">Our Team</span>
+          <span class="text text-2" aria-hidden="true">Our Team</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Slider Buttons -->
+    <button class="banner-button prev" aria-label="slide previous" data-banner-prev>
+      <ion-icon name="chevron-back"></ion-icon>
+    </button>
+    <button class="banner-button next" aria-label="slide next" data-banner-next>
+      <ion-icon name="chevron-forward"></ion-icon>
+    </button>
+
+    <!-- Floating "Reserve Table" Button (example) -->
+    <a href="#register" class="banner-reserve has-after">
+      <img src="photos/Unknown.jpeg" alt="booking icon" />
+      <span class="section-minor-title text-center">Book Now</span>
+    </a>
   </section>
 
-  <!-- Featured Products Section -->
-  <section id="featured-products">
-    <h2>Featured Products</h2>
-    <div class="products">
-      <div class="product">
-        <img src="images/product1.jpg" alt="Product 1">
-        <h3>T-Shirt</h3>
-        <p>$20</p>
+  <!-- =========================
+       ABOUT SECTION
+  ========================== -->
+  <section class="intro section" id="about">
+    <div class="container">
+      <div class="intro-content">
+        <p class="section-minor-title">Our Story</p>
+        <h2 class="heading-1">Where Every Dish Tells a Tale</h2>
+        <p class="text-md">
+          Founded by food enthusiasts, Flavourish brings you unforgettable
+          dining experiences, blending local ingredients with global culinary
+          techniques. We believe each meal should delight the senses and
+          warm the soul.
+        </p>
+        <a href="#team" class="button button-primary">
+          <span class="text text-1">Meet the Chefs</span>
+          <span class="text text-2" aria-hidden="true">Meet the Chefs</span>
+        </a>
       </div>
-      <div class="product">
-        <img src="images/product2.jpg" alt="Product 2">
-        <h3>Jacket</h3>
-        <p>$50</p>
+
+      <figure class="intro-banner">
+        <img
+          src="photos/image-16.jpg.avif"
+          alt="about banner"
+          class="w-100"
+          data-parallax
+          data-parallax-speed="1"
+        />
+        <div class="abs-img abs-img-1" data-parallax data-parallax-speed="1.75">
+          <img src="images/about-abs-image.jpg" alt="" class="w-100" />
+        </div>
+        <div class="abs-img abs-img-2 has-before">
+          <img src="images/badge-2.png" alt="" />
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- =========================
+       MENU SECTION
+  ========================== -->
+  <section class="food-list section" id="menu">
+    <div class="container">
+      <p class="section-minor-title text-center">Our Favorites</p>
+      <h2 class="heading-1 text-center">Delicious Menu</h2>
+
+      <ul class="grid-list">
+        <!-- Example dish 1 -->
+        <li>
+          <div class="food-card shine-card">
+            <figure class="card-banner img-holder" style="--width:100; --height:100;">
+              <img src="photos/greek_salad.jpeg" alt="Greek Salad" class="img-cover"/>
+            </figure>
+            <div>
+              <div class="title-wrapper">
+                <h3 class="primary-title">
+                  <a href="#" class="card-title">Greek Salad</a>
+                </h3>
+                <span class="badge text-xs">New</span>
+                <span class="highlight text-sm">$14.99</span>
+              </div>
+              <p class="card-text text-xs">
+                Fresh lettuce, tomatoes, cucumber, onions, olives & feta cheese.
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <!-- Example dish 2 -->
+        <li>
+          <div class="food-card shine-card">
+            <figure class="card-banner img-holder" style="--width:100; --height:100;">
+              <img src="photos/lasagna.jpeg" alt="Lasagna" class="img-cover"/>
+            </figure>
+            <div>
+              <div class="title-wrapper">
+                <h3 class="primary-title">
+                  <a href="#" class="card-title">Classic Lasagne</a>
+                </h3>
+                <span class="highlight text-sm">$18.99</span>
+              </div>
+              <p class="card-text text-xs">
+                Layers of pasta, ground meat, tomato sauce & melted cheeses.
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <p class="text-md text-center">
+        Available daily <span class="highlight">11:00 am</span> - <span class="highlight">10:00 pm</span>
+      </p>
+      <a href="#register" class="button button-primary">
+        <span class="text text-1">Reserve Now</span>
+        <span class="text text-2" aria-hidden="true">Reserve Now</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================
+       TEAM SECTION
+       (Fetch random user data from API)
+  ========================== -->
+  <section class="section" id="team">
+    <div class="container">
+      <p class="section-minor-title text-center">Meet Our Staff</p>
+      <h2 class="heading-1 text-center">Our Chefs</h2>
+      <p class="text-md text-center">
+        Dynamically fetched from <code>randomuser.me</code> to fulfill “info from server” requirement.
+      </p>
+
+      <!-- Button to load or refresh Chefs from API -->
+      <div class="text-center">
+        <button id="loadChefsBtn" class="button button-primary" type="button">
+          <span class="text text-1">Load Chefs</span>
+          <span class="text text-2" aria-hidden="true">Load Chefs</span>
+        </button>
       </div>
-      <div class="product">
-        <img src="images/product3.jpg" alt="Product 3">
-        <h3>Jeans</h3>
-        <p>$30</p>
+
+      <div class="grid-list" id="chefsContainer" style="margin-top: 40px;">
+        <!-- JS will inject .chef-card items here -->
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 ClotheShop. All Rights Reserved.</p>
+  <!-- =========================
+       REGISTRATION SECTION
+       (Form with show/hide password + validation)
+  ========================== -->
+  <section class="section booking-form" id="register">
+    <div class="container">
+      <h2 class="heading-1 text-center">Create an Account</h2>
+      <p class="text-md text-center">
+        Sign up to receive exclusive offers and easy online ordering access.
+      </p>
+
+      <form id="registrationForm" class="registration-form" autocomplete="off">
+        <div class="form-group">
+          <label for="username">Username<span>*</span></label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            class="input-field"
+            placeholder="Enter username"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email<span>*</span></label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            class="input-field"
+            placeholder="Enter email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password<span>*</span></label>
+          <div class="password-wrapper">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="input-field"
+              placeholder="Enter password"
+            />
+            <button type="button" id="togglePassword" class="toggle-pw-btn">
+              <ion-icon name="eye-off-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone<span>*</span></label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            class="input-field"
+            placeholder="Enter phone number"
+          />
+        </div>
+
+        <button type="submit" class="button button-secondary full-width">
+          <span class="text text-1">Sign Up</span>
+          <span class="text text-2" aria-hidden="true">Sign Up</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="site-footer section has-bg-image" style="background-image: url('images/footer-bg.jpg');">
+    <div class="container">
+      <div class="footer-top grid-list">
+        <div class="footer-brand has-before has-after text-center">
+          <a href="#top" class="logo">Flavourish</a>
+
+          <address class="text-sm">
+            123 Foodie Street, Tastyville, USA
+          </address>
+          <p class="text-sm">Open: 09:00 am - 10:00 pm</p>
+
+          <div class="footer-brand-decor">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+
+          <p class="primary-title">Stay Updated</p>
+          <p class="text-xs">
+            Subscribe & get <span class="highlight">25% Off</span>
+          </p>
+          <form action="" class="footer-subscribe">
+            <div class="icon-wrapper">
+              <ion-icon name="mail-outline"></ion-icon>
+              <input
+                type="email"
+                name="email_address"
+                placeholder="Your email"
+                class="input-field"
+              />
+            </div>
+            <button type="submit" class="button button-secondary">
+              <span class="text text-1">Subscribe</span>
+              <span class="text text-2" aria-hidden="true">Subscribe</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Extra footer links, optional -->
+        <ul class="footer-list">
+          <li><a href="#hero" class="text-xs footer-link hover-underline">Home</a></li>
+          <li><a href="#about" class="text-xs footer-link hover-underline">About</a></li>
+          <li><a href="#menu" class="text-xs footer-link hover-underline">Menu</a></li>
+          <li><a href="#team" class="text-xs footer-link hover-underline">Team</a></li>
+          <li><a href="#register" class="text-xs footer-link hover-underline">Register</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom text-center">
+        <p class="copyright">
+          &copy; 2025 Nino_Kokilashvili. Created for the Final Project. All Rights Reserved.
+        </p>
+      </div>
+    </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <a href="#top" class="scroll-top-button" data-scroll-top aria-label="Back to top">
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+  <!-- Main JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
