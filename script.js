@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("cookiesAccepted") === "true") {
     cookieBanner.style.display = "none";
   } else {
-    cookieBanner.style.display = "flex";
+    cookieBanner.style.display = "flex"; // Ensure it's visible
   }
 });
 
@@ -35,7 +35,7 @@ const overlay = document.querySelector("[data-page-overlay]");
 function toggleMobileNav() {
   mobileNavbar.classList.toggle("active");
   overlay.classList.toggle("active");
-  document.body.classList.toggle("nav-active");
+  document.body.classList.toggle("nav-active"); /* prevent scrolling */
 }
 
 navToggles.forEach((toggle) => {
@@ -191,6 +191,8 @@ registrationForm.addEventListener("submit", (e) => {
     alert("Please enter a valid phone number.");
     return;
   }
+
+  // If all checks pass:
   alert("Registration successful! Welcome to Flavourish!");
   registrationForm.reset();
 });
